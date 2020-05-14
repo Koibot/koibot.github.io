@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>playground 1264</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="css/normalize.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet" media="all">
+    <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+</head>
+<body>
+    <header role="banner">
+        <h1>you can (not) find me</h1>
+        <nav role="navigation">
+
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <main role="main">
+            <h2>2020年5月13日</h2>
+            <p>
+                最近都是可喜可贺的八点起床十二点睡觉。
+                获得规律作息这一成就，首先我要感谢我的室友们，
+                其次我要思考一下在css里限制页面宽度，
+                不然写日记还写得像诗一样（并不）。
+
+                昨天水了一题POJ 1317。
+                其实是好久之前做的今天改改格式上传了而已。
+                当然是不会如此顺利的。
+                提交了两次错误答案之后我突然发现
+                if(i+n &lt; 28){c = i+n;}
+                else{c = i+n-28}
+                /*0 &lt; i &lt;= 70, 0 &lt;= n &lt;= 27*/
+                并不能把c的取值范围限制在[0,27]
+                因为i+n不仅可能大于28, 还可能大于56，还可能大于84啊
+                然后我把判断改成
+                int ci = n + i;
+		        while (true) {
+			        if (ci &lt; 28) {
+				        break;
+			        }
+			        ci = ci - 28;
+                }
+                就通过了。
+                果然我的脑子太简单。
+                大概就是墙经常破，每次都拿东西堵上，但是没有考虑过换一面更坚固的新墙的那种人。
+            </p>
+        </main>
+    </div>
+
+    <footer role="contentinfo">
+        <address>
+          <p><a href="mailto:naryaisnotacat@outlook.com">koibot</a>.</p>
+        </address>
+        <small>Copyright &copy; <time>2020</time></small>
+    </footer>
+
+</body>
+</html>
