@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>playground 1264</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="css/normalize.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet" media="all">
+    <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+</head>
+<body>
+    <header role="banner">
+        <h1>you can (not) find me</h1>
+        <nav role="navigation">
+
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <main role="main">
+            <h2>2020年5月19日</h2>
+            <p>
+                水了一道求逆序数的题。<br>
+                本质是排序。<br>
+                本质是桶排序。<br>
+                因为审错题，没确定可能的出现的字符只有ACGT四种，<br>
+                浪费了一半时间在错误的方向上，企图维护一个局部有序子串坐标的数组。<br>
+                最后忍不住看答案，发现果然是<br>
+                sortedness(i) = <br>
+                1) <br>
+                sortedness(i+1);<br>
+                A_count++;//s[i]=='A' <br>
+                or 2) <br>
+                sortedness(i+1)+A_count; <br>
+                C_count++;//s[i]=='C'<br>
+                or 3) <br>
+                sortedness(i+1)+A_count+C_count; <br>
+                G_count++;//s[i]=='G'<br>
+                or 4) <br>
+                sortedness(i+1)+A_count+C_count+G_count;<br>
+                T_count++;//s[i]=='T'<br>
+                再用普通话说一次就是从后向前遍历字符串s, <br>
+                在第i个字符处的逆序数是从i+1开始到结尾的比s[i]小的字符个数之和。<br>
+                你懂我意思吧？<br>
+                剩下的一半时间用来写bug。<br>
+                毕竟我现在连一维数组的边界条件都处理不好了。<br>
+                从0开始（指坐标）的计算机科学。<br>
+                <br>
+                生活小事：今天开窗抽烟差点又把窗给卸了下来。<br>
+                确切来说就是卸了下来，不过我凭第六感抓紧了边沿，窗才没掉下去。<br>
+                从这段描述来看，我似乎是个力大无穷的人，且频繁卸窗。<br>
+                并不是这样的。<br>
+                只是那种一个细框加铁丝网的纱窗，平时靠左右的弹簧卡在两侧墙上，向上推开。<br>
+                但是因为年久失修，质量太次，只要有一点外推的力就会自己掉出来。<br>
+                我为什么要花这么多时间解释窗？<br>
+                <br>
+                然后周末看完了the secret history。<br>
+                是个一群学生被老师忽悠瘸了的故事（并不。<br>
+                和the goldfinch比较的话<br>
+                语言：the goldfinch &gt; the sceret history<br>
+                人物形象： the goldfinch &gt; the secret history<br>
+                故事情节： the secret history &gt; the goldfinch<br>
+                <br>
+                二房东之一突然穿着女装出现了。<br>
+                从这句话可以推出，二房东之一是男的(唐突)。<br>
+
+                
+            </p>
+        </main>
+    </div>
+
+    <footer role="contentinfo">
+        <address>
+          <p><a href="mailto:naryaisnotacat@outlook.com">koibot</a>.</p>
+        </address>
+        <small>Copyright &copy; <time>2020</time></small>
+    </footer>
+
+</body>
+</html>
